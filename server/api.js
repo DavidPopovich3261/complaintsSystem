@@ -8,12 +8,12 @@ const SECRET = process.env.SECRET
 const app = express()
 app.use(express.json())
 app.use(cors())
+const db = await connect()
 
 
 app.post("/api/complaints", async (req, res) => {
     const { category, message } = req.body
     console.log(category, message);
-    const db = await connect()
     const insert = await db.collection("messages").insertOne({ "category": category, "message": message, createdAt: new Date().toLocaleString() })
     console.log(insert);
     res.json({ message: "התלונה נשלחה בהצלחה" })
@@ -30,7 +30,9 @@ app.post("/api/admin/login", (req, res) => {
 })
 
 app.get("/api/complaints", async (req, res) => {
+    
     const data = await db.collection("messages").find({}).toArray()
+    console.log(data);
     res.json({ data })
 })
 
