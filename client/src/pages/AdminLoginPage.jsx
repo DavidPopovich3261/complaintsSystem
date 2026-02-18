@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Useprovider } from '../Providercontext'
+import "../css/admin.css"
 
 function AdminLoginPage() {
     const { setToken } = useContext(Useprovider)

@@ -6,20 +6,25 @@ import AdminLoginPage from './pages/AdminLoginPage';
 import AdminComplaintsPage from './pages/AdminComplaintsPage';
 import { Providercontext } from './Providercontext';
 import "./app.css"
+import Protect from './pages/Protect';
 
 function App() {
   return (
     <div className="app">
-    <Providercontext>
-      <BrowserRouter >
-        <Routes >
-          <Route path="/" element={<HomePage />} />
-          <Route path='/submit' element={<SubmitComplaintPage />} />
-          <Route path="/admin/login" element={<AdminLoginPage />} />
-          <Route path="/admin" element={<AdminComplaintsPage />} />
-        </Routes>
-      </BrowserRouter>
-    </Providercontext>
+      <Providercontext>
+        <BrowserRouter >
+          <Routes >
+            <Route path="/" element={<HomePage />} />
+            <Route path='/submit' element={<SubmitComplaintPage />} />
+            <Route path="/admin/login" element={<AdminLoginPage />} />
+            <Route path="/admin" element={
+              <Protect>
+                <AdminComplaintsPage />
+              </Protect>
+            } />
+          </Routes>
+        </BrowserRouter>
+      </Providercontext>
     </div>
   )
 }
