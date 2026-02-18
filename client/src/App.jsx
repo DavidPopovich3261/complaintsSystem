@@ -5,12 +5,14 @@ import SubmitComplaintPage from './pages/SubmitComplaintPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminComplaintsPage from './pages/AdminComplaintsPage';
 import { Providercontext } from './Providercontext';
+import "./app.css"
 
 function App() {
   return (
+    <div className="app">
     <Providercontext>
-      <BrowserRouter>
-        <Routes>
+      <BrowserRouter >
+        <Routes >
           <Route path="/" element={<HomePage />} />
           <Route path='/submit' element={<SubmitComplaintPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
@@ -18,6 +20,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </Providercontext>
+    </div>
   )
 }
 

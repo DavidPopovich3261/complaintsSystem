@@ -25,7 +25,7 @@ app.post("/api/admin/login", (req, res) => {
         const token = jwt.sign({}, SECRET, { expiresIn: "1h" })
         return res.status(200).json({ token })
     } else {
-        res.status(401).json({ message: "fdssfdg" })
+        res.status(401).json({ message:"הסיסמה שגויה" })
     }
 })
 

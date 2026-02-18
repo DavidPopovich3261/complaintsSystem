@@ -16,18 +16,30 @@ function AdminLoginPage() {
                     "password": JSON.stringify(password)
                 }
             })
-            res = await res.json()
-            console.log(res);
-            setToken(res.token)
-            navigate("/admin")
+            if (res.ok) {
+
+                res = await res.json()
+                console.log(res);
+                setToken(res.token)
+                navigate("/admin")
+            }
+            else {
+                alert((await res.json()).message)
+            }
         } catch (err) {
             console.error(err);
         }
     }
     return (
-        <div>
-            <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='password' />
-            <button onClick={entry}>entry</button>
+        <div className='Admin'>
+            <h1>Admin Login Page</h1>
+            <div>
+                <label>
+                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    :סיסמה
+                </label>
+                <button onClick={entry}>התחברות</button>
+            </div>
         </div>
     )
 }

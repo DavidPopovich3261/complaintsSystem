@@ -1,0 +1,67 @@
+* {
+    margin: 0%;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+    background-color: #f0f0f0;
+    height: 100vh;
+}
+
+.complaint div {
+    background-color: white;
+    height: 40%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 1px 5px 1px rgb(124, 118, 118);
+}
+
+.complaint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    padding: 10px;
+}
+
+.complaint button {
+    background-color: green;
+    width: 50%;
+    padding: 5px;
+    color: white;
+}
+
+.Admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    padding: 10px;
+}
+
+.Admin div {
+    background-color: white;
+    height: 40%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 1px 5px 1px rgb(124, 118, 118);
+}
+
+.Admin button {
+    background-color: blue;
+    width: 50%;
+    padding: 5px;
+    color: white;
+}
