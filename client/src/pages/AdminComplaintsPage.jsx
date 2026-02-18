@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from 'react'
 
 function AdminComplaintsPage() {
-  const [data, setData] = useState([{ category: '3333' }])
+  const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/complaints")
-      .then(res => res.json())
-      .then(json => setData(json.data))
-
-
-      , []
-  })
-
-console.log(222, data.data)
+      async function fetchData() {
+        let result = await fetch("http://localhost:8000/api/complaints");
+        result = await result.json();
+        setData(result.data);
+      }
+      fetchData();
+  }, [])
   return (
     <div>
-      <p>uuuu</p>
-      {data.map((item) => {
-        return (<>
-          <p>aaaa</p>
-          <h1>{JSON.stringify(item)}</h1>
-        </>
+      {data && data.map((item) => {
+        return (
+          <div key={item._id}>
+            <h1>{item.category}</h1>
+            <p>{item.message}</p>
+          </div>
         )
       })}
-
     </div>
   )
 }

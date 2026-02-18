@@ -26,6 +26,8 @@ function SubmitComplaintPage() {
         alert(res.message);
         navigate("/")
     }
+    console.log("kujgy");
+    
     return (
         <div>
             <select value={category} onChange={handleChangecategory}>
