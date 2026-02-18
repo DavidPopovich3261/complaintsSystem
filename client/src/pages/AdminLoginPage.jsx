@@ -35,8 +35,9 @@ function AdminLoginPage() {
         <div className='Admin'>
             <h1>Admin Login Page</h1>
             <div>
+                <h2>כניסה לאדמין</h2>
                 <label>
-                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     :סיסמה
                 </label>
                 <button onClick={entry}>התחברות</button>
