@@ -4,12 +4,12 @@ function AdminComplaintsPage() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-      async function fetchData() {
-        let result = await fetch("http://localhost:8000/api/complaints");
-        result = await result.json();
-        setData(result.data);
-      }
-      fetchData();
+    async function fetchData() {
+      let result = await fetch("http://localhost:8000/api/complaints");
+      result = await result.json();
+      setData(result.data);
+    }
+    fetchData();
   }, [])
   return (
     <div>
@@ -18,6 +18,7 @@ function AdminComplaintsPage() {
           <div key={item._id}>
             <h1>{item.category}</h1>
             <p>{item.message}</p>
+            <p>{item.createdAt}</p>
           </div>
         )
       })}
