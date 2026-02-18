@@ -23,9 +23,10 @@ function AdminComplaintsPage() {
         <option value="equipment">ציוד </option>
         <option value="commands">פקודות </option>
         <option value="other">אחר</option>
+        <option value="all">הכול</option>
       </select>
       <div className='data b'>
-        {data && data.filter(item => item.category == category
+        {data && data.filter(item => item.category == category || category=="all"
         ).map((item) => {
           return (
             <div key={item._id}>
